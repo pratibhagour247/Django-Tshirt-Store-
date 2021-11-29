@@ -1,0 +1,35 @@
+{% extends "./base.html" %}
+{% load tshirt_tags %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for tshirt in tshirts %}
+        <div class="col-4 mx-auto mt-3 ">
+            <div class="card h-100" style="width: 18rem;">
+                <img src="{{tshirt.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{tshirt.name}}</h5>
+
+                    <span class="text-danger"><del> {% min_price tshirt as result %}
+                        {{result|rupee}} </del></span>
+                    &nbsp;
+                    <span>{% sale_price tshirt as result %}
+                        {{result | rupee}} 
+                    </span>
+                    &nbsp;
+
+                    <span class="text-info">save {{tshirt.discount}}%</span>
+                </div>
+                <div class="card-footer p-0">
+                    <a href="/product/{{tshirt.id}}" class="btn btn-dark btn-block">see more</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

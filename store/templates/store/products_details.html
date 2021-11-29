@@ -1,0 +1,42 @@
+{% extends "./base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="p-4 m-3 mx-auto">
+                <img src="{{tshirt.image.url}}" class="image-fluid">
+            </div>
+        </div>
+        <div class="col">
+            <div class="p-4 m-3 mx-auto">
+                <div class="display-4">{{tshirt.name}}</div>
+                    <hr>
+                <p>{{tshirt.description|title}}</p>
+                
+            </div>
+            
+                <div class="row border">
+                    <div class="col">
+                        <div class="p-4 m-3 mx-auto">
+                        {{tshirt.SizeVarient}}  
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-4 m-3 mx-auto">
+                            <div class="display-4">{{tshirt.name}}</div>
+                                <hr>
+                            <p>{{tshirt.description|title}}</p>
+                            
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+ 
+        
+    </div>
+</div>
+{% endblock %}
